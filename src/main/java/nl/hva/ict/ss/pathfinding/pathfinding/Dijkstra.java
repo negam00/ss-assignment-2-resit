@@ -117,7 +117,7 @@ public class Dijkstra {
     }
 
     //todo add to verslag
-    public void DijkstraCounter(int countInt){
+    public void dijkstraCounter(int countInt){
         if(counter.contains(countInt) != true){
             counter.add(countInt);
         }
@@ -171,7 +171,11 @@ public class Dijkstra {
                 System.err.println("edge " + e + " on shortest path not tight");
                 return false;
             }
+            dijkstraCounter(w);
+
         }
+
+        System.out.println("Dijkstra " + counter.size());
         return true;
     }
  }
