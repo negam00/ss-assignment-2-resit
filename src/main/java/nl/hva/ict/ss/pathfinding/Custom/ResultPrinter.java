@@ -8,22 +8,35 @@ public class ResultPrinter {
 
     }
 
-    public  void printStringList(ArrayList<TestResult> resultList) {
-        System.out.println("Bitmapnumber: ");
-        for (TestResult test : resultList) {
-            System.out.println(test.getBitmapName());
+    public  void printResults(ArrayList<TestResult> resultList) {
+
+        System.out.println("bitmapname");
+
+        for (int i = 0; i < resultList.size() ; i++) {
+            System.out.println("" + resultList.get(i).getBitmapName() );
+
         }
+
         System.out.println("Tiles");
-        for (TestResult test : resultList) {
-            System.out.println(test.getTiles());
+
+        for (int i = 0; i < resultList.size() ; i++) {
+            System.out.println("" + resultList.get(i).getTiles() );
+
         }
+
         System.out.println("Length");
-        for (TestResult test : resultList) {
-            System.out.println(test.getLength());
+
+        for (int i = 0; i < resultList.size() ; i++) {
+            System.out.println("" + resultList.get(i).getLength() );
+
         }
-        System.out.println("getCost");
-        for (TestResult test : resultList) {
-            System.out.println(test.getCost());
+
+        System.out.println("Cost");
+
+        for (int i = 0; i < resultList.size() ; i++) {
+            System.out.println("" + resultList.get(i).getCost() );
+
         }
+
     }
 }

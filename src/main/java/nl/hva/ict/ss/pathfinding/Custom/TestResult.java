@@ -1,5 +1,7 @@
 package nl.hva.ict.ss.pathfinding.Custom;
 
+import java.util.ArrayList;
+
 public class TestResult {
     private String bitmapName;
     private String tiles;
@@ -28,5 +30,6 @@ public class TestResult {
         this.length = length;
         this.cost = cost;
     }
+
 }
 

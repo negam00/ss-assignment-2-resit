@@ -2,7 +2,6 @@ package nl.hva.ict.ss.pathfinding.pathfinding;
 
 import nl.hva.ict.ss.pathfinding.Custom.ResultPrinter;
 import nl.hva.ict.ss.pathfinding.Custom.TestResult;
-import nl.hva.ict.ss.pathfinding.tileworld.TileWorldUtil;
 import nl.hva.ict.ss.pathfinding.weigthedgraph.EdgeWeightedDigraph;
 import org.junit.Test;
 
@@ -20,7 +19,7 @@ public class Demo {
 		// Make sure that it is writeable and we know where to look for it
 
 		System.out.printf("ID;Length Dijkstra;Length Floyd;Costs Dijkstra; Costs Floyd\n");
-		for (int i = 1; i <= 4; i++) {
+		for (int i = 1; i <= 24; i++) {
 			// Read the graph directly from a image
 			EdgeWeightedDigraph graafDijkstra = new EdgeWeightedDigraph("i" + i);
 			// Get the start and end node
@@ -55,8 +54,8 @@ public class Demo {
 			}
 		}
 
-		resultPrinter.printStringList(dijkstraResults);
-		resultPrinter.printStringList(floydResults);
+		resultPrinter.printResults(dijkstraResults);
+		resultPrinter.printResults(floydResults);
 
 
 	}
