@@ -46,7 +46,8 @@ import java.util.Stack;
      * @param G the edge-weighted digraph
      */
 
-    //todo change name
+
+    //todo add to verslag
     public void FloydCounter(int countInt){
         if(counter.contains(countInt) != true){
             counter.add(countInt);

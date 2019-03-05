@@ -4,6 +4,7 @@ import nl.hva.ict.ss.pathfinding.weigthedgraph.DirectedEdge;
 import nl.hva.ict.ss.pathfinding.weigthedgraph.EdgeWeightedDigraph;
 import nl.hva.ict.ss.pathfinding.weigthedgraph.IndexMinPQ;
 
+import java.util.ArrayList;
 import java.util.Stack;
 
 /**
@@ -31,6 +32,10 @@ public class Dijkstra {
     private double[] distTo;          // distTo[v] = distance  of shortest s->v path
     private DirectedEdge[] edgeTo;    // edgeTo[v] = last edge on shortest s->v path
     private IndexMinPQ<Double> pq;    // priority queue of vertices
+    public ArrayList<Integer> counter = new ArrayList<>();
+
+
+
 
     /**
      * Computes a shortest paths tree from <tt>s</tt> to every other vertex in
@@ -109,6 +114,13 @@ public class Dijkstra {
             path.push(e);
         }
         return path;
+    }
+
+    //todo add to verslag
+    public void DijkstraCounter(int countInt){
+        if(counter.contains(countInt) != true){
+            counter.add(countInt);
+        }
     }
 
 

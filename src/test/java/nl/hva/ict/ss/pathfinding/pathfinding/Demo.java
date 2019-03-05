@@ -9,18 +9,18 @@ import org.junit.Test;
 import java.util.ArrayList;
 
 public class Demo {
-
-	//todo change naam
 	public ArrayList<TestResult> dijkstraResults = new ArrayList<>();
 	public ArrayList<TestResult> floydResults = new ArrayList<>();
 	public ResultPrinter resultPrinter = new ResultPrinter();
 
+
 	@Test
 	public void test() {
+
 		// Make sure that it is writeable and we know where to look for it
-		TileWorldUtil.outputDir = "C:\\Users\\Admin\\Desktop\\s&s-projects\\ss-assignment-2-resit\\src\\main\\resources\\output";
+
 		System.out.printf("ID;Length Dijkstra;Length Floyd;Costs Dijkstra; Costs Floyd\n");
-		for (int i = 1; i <= 21; i++) {
+		for (int i = 1; i <= 19; i++) {
 			// Read the graph directly from a image
 			EdgeWeightedDigraph graafDijkstra = new EdgeWeightedDigraph("i" + i);
 			// Get the start and end node
@@ -37,33 +37,36 @@ public class Demo {
 			}
 
 			// Run Floyd-Warshall
-            EdgeWeightedDigraph graafFloyd = new EdgeWeightedDigraph("i" + i);
+			EdgeWeightedDigraph graafFloyd = new EdgeWeightedDigraph("i" + i);
 			FloydWarshall floyd = new FloydWarshall(graafFloyd.createAdjMatrixEdgeWeightedDigraph());
 			if (floyd.hasPath(start, finish)) {
 				// Show the result
-                graafFloyd.tekenPad(floyd.path(start, finish));
+				graafFloyd.tekenPad(floyd.path(start, finish));
 				// Save it
-                graafFloyd.save("i" + i + "-floyd");
+				graafFloyd.save("i" + i + "-floyd");
 			}
 			if (dijkstra.hasPathTo(finish)) {
-                System.out.printf("i%d;%d;%d;%1.0f;%1.0f\n", i, length(dijkstra.pathTo(finish)), length(floyd.path(start, finish)), dijkstra.distTo(finish), floyd.dist(start, finish));
-            } else {
-                System.out.printf("i%d;-;-;-;-\n", i);
-            }
+				System.out.printf("i%d;%d;%d;%1.0f;%1.0f\n", i, length(dijkstra.pathTo(finish)), length(floyd.path(start, finish)), dijkstra.distTo(finish), floyd.dist(start, finish));
+
+				dijkstraResults.add(new TestResult(Integer.toString(i), Integer.toString(dijkstra.counter.size()), Integer.toString(length(dijkstra.pathTo(finish))), String.valueOf(dijkstra.distTo(finish))));
+				floydResults.add(new TestResult(Integer.toString(i), Integer.toString(floyd.counter.size()), Integer.toString(length(floyd.path(start, finish))), String.valueOf(floyd.dist(start, finish))));
+			} else {
+				System.out.printf("i%d;-;-;-;-\n", i);
+			}
 		}
 
-		//todo change naam variabelen
 		resultPrinter.printStringList(dijkstraResults);
 		resultPrinter.printStringList(floydResults);
+
 
 	}
 
 	private <T> int length(Iterable<T> iterable) {
-	    int length = 0;
-	    for (T notNeeded : iterable) {
-	        length++;
-        }
-	    return length;
-    }
+		int length = 0;
+		for (T notNeeded : iterable) {
+			length++;
+		}
+		return length;
+	}
 
 }
