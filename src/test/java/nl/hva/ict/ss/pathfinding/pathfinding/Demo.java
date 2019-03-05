@@ -1,15 +1,24 @@
 package nl.hva.ict.ss.pathfinding.pathfinding;
 
+import nl.hva.ict.ss.pathfinding.Custom.ResultPrinter;
+import nl.hva.ict.ss.pathfinding.Custom.TestResult;
 import nl.hva.ict.ss.pathfinding.tileworld.TileWorldUtil;
 import nl.hva.ict.ss.pathfinding.weigthedgraph.EdgeWeightedDigraph;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 public class Demo {
+
+	//todo change naam
+	public ArrayList<TestResult> dijkstraResults = new ArrayList<>();
+	public ArrayList<TestResult> floydResults = new ArrayList<>();
+	public ResultPrinter resultPrinter = new ResultPrinter();
 
 	@Test
 	public void test() {
 		// Make sure that it is writeable and we know where to look for it
-		TileWorldUtil.outputDir = "/Users/nico/Downloads/output/";
+		TileWorldUtil.outputDir = "C:\\Users\\Admin\\Desktop\\s&s-projects\\ss-assignment-2-resit\\src\\main\\resources\\output";
 		System.out.printf("ID;Length Dijkstra;Length Floyd;Costs Dijkstra; Costs Floyd\n");
 		for (int i = 1; i <= 21; i++) {
 			// Read the graph directly from a image
@@ -42,6 +51,11 @@ public class Demo {
                 System.out.printf("i%d;-;-;-;-\n", i);
             }
 		}
+
+		//todo change naam variabelen
+		resultPrinter.printStringList(dijkstraResults);
+		resultPrinter.printStringList(floydResults);
+
 	}
 
 	private <T> int length(Iterable<T> iterable) {
