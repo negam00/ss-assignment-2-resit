@@ -10,7 +10,7 @@ public class PrintClass {
 
     public  void printResults(ArrayList<Result> resultList) {
 
-        System.out.println("bitmapname");
+        System.out.println("bitmap");
 
         for (int i = 0; i < resultList.size() ; i++) {
             System.out.println("" + resultList.get(i).getBitmapName() );
