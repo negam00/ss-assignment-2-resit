@@ -2,13 +2,13 @@ package nl.hva.ict.ss.pathfinding.Custom;
 
 import java.util.ArrayList;
 
-public class ResultPrinter {
+public class PrintClass {
 
-    public ResultPrinter() {
+    public PrintClass() {
 
     }
 
-    public  void printResults(ArrayList<TestResult> resultList) {
+    public  void printResults(ArrayList<Result> resultList) {
 
         System.out.println("bitmapname");
 

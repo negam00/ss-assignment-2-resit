@@ -1,16 +1,16 @@
 package nl.hva.ict.ss.pathfinding.pathfinding;
 
-import nl.hva.ict.ss.pathfinding.Custom.ResultPrinter;
-import nl.hva.ict.ss.pathfinding.Custom.TestResult;
+import nl.hva.ict.ss.pathfinding.Custom.PrintClass;
+import nl.hva.ict.ss.pathfinding.Custom.Result;
 import nl.hva.ict.ss.pathfinding.weigthedgraph.EdgeWeightedDigraph;
 import org.junit.Test;
 
 import java.util.ArrayList;
 
 public class Demo {
-	public ArrayList<TestResult> dijkstraResults = new ArrayList<>();
-	public ArrayList<TestResult> floydResults = new ArrayList<>();
-	public ResultPrinter resultPrinter = new ResultPrinter();
+	public ArrayList<Result> dijkstraResults = new ArrayList<>();
+	public ArrayList<Result> floydResults = new ArrayList<>();
+	public PrintClass resultPrinter = new PrintClass();
 
 
 	@Test
@@ -47,8 +47,8 @@ public class Demo {
 			if (dijkstra.hasPathTo(finish)) {
 				System.out.printf("i%d;%d;%d;%1.0f;%1.0f\n", i, length(dijkstra.pathTo(finish)), length(floyd.path(start, finish)), dijkstra.distTo(finish), floyd.dist(start, finish));
 
-				dijkstraResults.add(new TestResult(Integer.toString(i), Integer.toString(dijkstra.counter.size()), Integer.toString(length(dijkstra.pathTo(finish))), String.valueOf(dijkstra.distTo(finish))));
-				floydResults.add(new TestResult(Integer.toString(i), Integer.toString(floyd.counter.size()), Integer.toString(length(floyd.path(start, finish))), String.valueOf(floyd.dist(start, finish))));
+				dijkstraResults.add(new Result(Integer.toString(i), Integer.toString(dijkstra.counter.size()), Integer.toString(length(dijkstra.pathTo(finish))), String.valueOf(dijkstra.distTo(finish))));
+				floydResults.add(new Result(Integer.toString(i), Integer.toString(floyd.counter.size()), Integer.toString(length(floyd.path(start, finish))), String.valueOf(floyd.dist(start, finish))));
 			} else {
 				System.out.printf("i%d;-;-;-;-\n", i);
 			}

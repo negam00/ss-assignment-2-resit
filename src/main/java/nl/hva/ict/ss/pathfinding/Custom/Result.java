@@ -2,7 +2,7 @@ package nl.hva.ict.ss.pathfinding.Custom;
 
 import java.util.ArrayList;
 
-public class TestResult {
+public class Result {
     private String bitmapName;
     private String tiles;
     private String length;
@@ -24,7 +24,7 @@ public class TestResult {
         return cost;
     }
 
-    public TestResult(String bitmapName, String tiles, String length, String cost) {
+    public Result(String bitmapName, String tiles, String length, String cost) {
         this.bitmapName = bitmapName;
         this.tiles = tiles;
         this.length = length;
