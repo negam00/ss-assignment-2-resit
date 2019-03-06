@@ -1,4 +1,4 @@
-package nl.hva.ict.ss.pathfinding.Custom;
+package nl.hva.ict.ss.pathfinding.pathfinding;
 
 import java.util.ArrayList;
 
@@ -8,21 +8,23 @@ public class Result {
     private String length;
     private String cost;
 
-    public String getBitmapName() {
-        return bitmapName;
-    }
-
-    public String getTiles() {
-        return tiles;
-    }
 
     public String getLength() {
-        return length;
+        return this.length;
     }
 
     public String getCost() {
-        return cost;
+        return this.cost;
     }
+
+    public String getBitmapName() {
+        return this.bitmapName;
+    }
+
+    public String getTiles() {
+        return this.tiles;
+    }
+
 
     public Result(String bitmapName, String tiles, String length, String cost) {
         this.bitmapName = bitmapName;

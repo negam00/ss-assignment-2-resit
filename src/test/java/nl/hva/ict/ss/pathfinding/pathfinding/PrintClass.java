@@ -1,4 +1,4 @@
-package nl.hva.ict.ss.pathfinding.Custom;
+package nl.hva.ict.ss.pathfinding.pathfinding;
 
 import java.util.ArrayList;
 
